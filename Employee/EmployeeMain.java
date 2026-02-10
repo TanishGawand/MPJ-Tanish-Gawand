@@ -1,4 +1,7 @@
 package Employee;
+
+import java.util.Scanner;
+
 class Employee {
     protected double salary;
 
@@ -42,10 +45,34 @@ class InternEmployee extends Employee {
 public class EmployeeMain {
     public static void main(String[] args) {
 
-        FullTimeEmployee f = new FullTimeEmployee(50000);
-        InternEmployee i = new InternEmployee(20000);
+        Scanner sc = new Scanner(System.in);
 
-        f.calculateSalary();
-        i.calculateSalary();
+        System.out.print("Enter number of employees: ");
+        int n = sc.nextInt();
+
+        for(int j = 1; j <= n; j++) {
+
+            System.out.println("\nEmployee " + j);
+
+            System.out.print("Enter type (1- FullTime, 2- Intern): ");
+            int type = sc.nextInt();
+
+            System.out.print("Enter salary: ");
+            double salary = sc.nextDouble();
+
+            if(type == 1) {
+                FullTimeEmployee f = new FullTimeEmployee(salary);
+                f.calculateSalary();
+            }
+            else if(type == 2) {
+                InternEmployee i = new InternEmployee(salary);
+                i.calculateSalary();
+            }
+            else {
+                System.out.println("Invalid type!");
+            }
+        }
+
+        sc.close();
     }
 }
