@@ -1,4 +1,5 @@
 package Shape;
+import java.util.Scanner;
 class Shapes {
 
     // Constructor overloading
@@ -18,11 +19,22 @@ class Shapes {
 
 public class ShapeMain {
     public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
 
-        Shapes square = new Shapes(4);
-        Shapes rectangle = new Shapes(5, 6);
+        System.out.print("Enter side of square: ");
+        double side = sc.nextDouble();
+        Shapes square = new Shapes(side);
 
-        Shapes circle = new Shapes(1);
-        System.out.println("Area of Circle: " + circle.calculateArea(3));
+        System.out.print("Enter length of rectangle: ");
+        double length = sc.nextDouble();
+        System.out.print("Enter breadth of rectangle: ");
+        double breadth = sc.nextDouble();
+        Shapes rectangle = new Shapes(length, breadth);
+
+        System.out.print("Enter radius of circle: ");
+        double radius = sc.nextDouble();
+        Shapes circle = new Shapes(1); // Placeholder, not used
+        System.out.println("Area of Circle: " + circle.calculateArea(radius));
+        sc.close();
     }
 }
