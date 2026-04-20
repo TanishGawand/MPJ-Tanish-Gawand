@@ -33,7 +33,7 @@ public class ShapeMain {
 
         System.out.print("Enter radius of circle: ");
         double radius = sc.nextDouble();
-        Shapes circle = new Shapes(1); // Placeholder, not used
+        Shapes circle = new Shapes(1); 
         System.out.println("Area of Circle: " + circle.calculateArea(radius));
         sc.close();
     }
